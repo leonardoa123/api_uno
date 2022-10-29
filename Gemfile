@@ -46,3 +46,6 @@ group :development do
   # gem "spring"
 end
 
+#mis gemas
+
+gem 'jwt' #2.5.0
