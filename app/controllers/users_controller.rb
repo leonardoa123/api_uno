@@ -4,12 +4,12 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
 
         if @user.valid?
-            token =encode_token( { ussur_id: @user.id })
+            token =encode_token( { user_id: @user.id })
 
-            render json: { user: @user, token: token}, status: :ok
+            render json: { token: token}, status: :ok
         else
-            render joson: { error: "Invalid user or password"}, status: unprocesable_entity
-        end
+            render json: { error: "Unable to log in with provided credentials"}, status: :unprocessable_entity
+        end 
     end
 
 
